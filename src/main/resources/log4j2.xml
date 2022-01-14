@@ -1,1 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config"  status="WARN">
+    <Properties>
+        <Property name="filename">C:/Users/HP/Downloads/log4j-demo/logs</Property>
+    </Properties>
 
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} {%t} %-5Level %-50c{1.} - %msg %n"></PatternLayout>
+        </Console>
+        <File name="MyFile" fileName="logs/app.log">
+            <PatternLayout pattern=""%d{yyyy-MM-dd HH:mm:ss} {%t} %-5Level %-50c{1.} - %msg %n""></PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.example.log4jdemo" level="info" additivity="false">
+            <AppenderRef ref="Console"></AppenderRef>
+        </Logger>
+        <Root level="trace">
+            <AppenderRef ref="Console"></AppenderRef>
+        </Root>
+    </Loggers>
+</Configuration>
